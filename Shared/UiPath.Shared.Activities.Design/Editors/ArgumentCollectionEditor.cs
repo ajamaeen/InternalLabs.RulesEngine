@@ -1,4 +1,5 @@
-﻿using System.Activities.Presentation;
+﻿using InternalLabs.RulesEngine.Activities.Design.Properties;
+using System.Activities.Presentation;
 using System.Activities.Presentation.Converters;
 using System.Activities.Presentation.Model;
 using System.Activities.Presentation.PropertyEditing;

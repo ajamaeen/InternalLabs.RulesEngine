@@ -1,4 +1,5 @@
-﻿using LogicBuilder.Workflow.Activities.Rules;
+﻿using InternalLabs.RulesEngine.Activities.Design.Properties;
+using LogicBuilder.Workflow.Activities.Rules;
 using LogicBuilder.Workflow.ComponentModel.Serialization;
 using System;
 using System.Activities.Presentation;

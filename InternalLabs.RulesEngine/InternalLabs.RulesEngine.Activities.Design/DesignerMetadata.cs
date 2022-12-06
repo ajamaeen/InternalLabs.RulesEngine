@@ -15,7 +15,7 @@ namespace InternalLabs.RulesEngine.Activities.Design
             var categoryAttribute = new CategoryAttribute($"{Resources.Category}");
 
             builder.AddCustomAttributes(typeof(RulesPolicy<>), categoryAttribute);
-            //builder.AddCustomAttributes(typeof(RulesPolicy<>), new DesignerAttribute(typeof(RulesPolicyDesigner)));
+            builder.AddCustomAttributes(typeof(RulesPolicy<>), new DesignerAttribute(typeof(RulesPolicyDesigner)));
             builder.AddCustomAttributes(typeof(RulesPolicy<>), new HelpKeywordAttribute(""));
 
             MetadataStore.AddAttributeTable(builder.CreateTable());

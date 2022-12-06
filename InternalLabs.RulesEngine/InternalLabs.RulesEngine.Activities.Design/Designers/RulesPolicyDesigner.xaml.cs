@@ -1,6 +1,7 @@
 ﻿namespace InternalLabs.RulesEngine.Activities.Design
 {
     using InternalLabs.RulesEngine.Activities.Design.Dialogs;
+    using InternalLabs.RulesEngine.Activities.Design.Properties;
     using LogicBuilder.Workflow.Activities.Rules;
     using LogicBuilder.Workflow.Activities.Rules.Design;
     using LogicBuilder.Workflow.ComponentModel.Serialization;
@@ -21,7 +22,7 @@
     using System.Xml;
     using UiPath.Shared.Activities.Design.Controls;
     using UiPath.Shared.Activities.Design.Services;
-    using UiPath.Shared.Localization;    
+    using UiPath.Shared.Localization;
 
     /// <summary>
     /// Interaction logic for RulesPolicyDesigner.xaml

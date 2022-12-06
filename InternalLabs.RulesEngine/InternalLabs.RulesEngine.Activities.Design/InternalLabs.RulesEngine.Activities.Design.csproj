@@ -7,17 +7,22 @@
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <authors>Amer Jamaeen,Omar Saleh</authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>    
+    <description>Custom rules engine activity for UiPath studio</description>
+    <authors>Amer Jamaeen, Omar Saleh</authors>
     <owners>Internal Labs</owners>
-    <PackageIconUrl>http://www.uipath.com/hubfs/Logos/uipath-nuget-logo.png</PackageIconUrl>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Company>UiPath</Company>
+    <PackageIconUrl>http://www.uipath.com/hubfs/Logos/uipath-nuget-logo.png</PackageIconUrl>    
     <PackageLicenseUrl>https://www.uipath.com/hubfs/legalspot/UiPath_Activity_License_Agreement.pdf</PackageLicenseUrl>
     <PackageTags>Rules Engine, Business Rules</PackageTags>
     <PackageIconUrl>http://www.uipath.com/hubfs/Logos/uipath-nuget-logo.png</PackageIconUrl>
-    <Title>InternalLabs.RulesEngine.Activities</Title>
-    <description>Custom rule engine activity for UiPath studio</description>
-    <copyright>CopyRight 2022</copyright>
-    <PackageId>InternalLabs.RulesEngine.Activities</PackageId>
+    <Title>InternalLabs.RulesEngine.Activities</Title>    
+    <Copyright>© 2022 UiPath</Copyright>    
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/ajamaeen/InternalLabs.RulesEngine</PackageProjectUrl>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
   <!-- Package Metadata -->
   
@@ -65,13 +70,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InternalLabs.RulesEngine.Activities\InternalLabs.RulesEngine.Activities.csproj" />
-    <ProjectReference Include="..\InternalLabs.RulesEngine\InternalLabs.RulesEngine.csproj" />
+    <ProjectReference Include="..\InternalLabs.RulesEngine.Activities\InternalLabs.RulesEngine.Activities.csproj">
+      <PrivateAssets>All</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\InternalLabs.RulesEngine\InternalLabs.RulesEngine.csproj">
+      <PrivateAssets>All</PrivateAssets>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources.resx">
-      <Generator></Generator>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
