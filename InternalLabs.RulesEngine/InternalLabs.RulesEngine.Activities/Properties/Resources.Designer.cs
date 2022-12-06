@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InternalLabs.RulesEngine.Activities {
+namespace InternalLabs.RulesEngine.Activities.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace InternalLabs.RulesEngine.Activities {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InternalLabs.RulesEngine.Activities.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("InternalLabs.RulesEngine.Activities.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

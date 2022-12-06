@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UiPath.Shared.Localization
+namespace InternalLabs.RulesEngine.Activities.Properties
 {
-    class SharedResources : InternalLabs.RulesEngine.Activities.Resources
+    class SharedResources : Resources
     {
 
     }

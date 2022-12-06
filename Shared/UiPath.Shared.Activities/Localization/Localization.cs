@@ -1,6 +1,6 @@
-﻿using System;
+﻿using InternalLabs.RulesEngine.Activities.Properties;
+using System;
 using System.ComponentModel;
-using UiPath.Shared.Localization;
 
 namespace UiPath.Shared.Activities.Localization
 {

@@ -1,16 +1,15 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using InternalLabs.RulesEngine.Activities;
-using UiPath.Shared.Activities;
-using UiPath.Shared.Activities.Localization;
-using System.IO;
-using System.Xml;
-using UiPath.Shared.Localization;
-using System.Activities;
-using LogicBuilder.Workflow.ComponentModel.Serialization;
+using InternalLabs.RulesEngine.Activities.Properties;
 using LogicBuilder.Workflow.Activities.Rules;
 using LogicBuilder.Workflow.ComponentModel.Compiler;
+using LogicBuilder.Workflow.ComponentModel.Serialization;
+using System;
+using System.Activities;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Xml;
+using UiPath.Shared.Activities;
+using UiPath.Shared.Activities.Localization;
 
 namespace InternalLabs.RulesEngine.Activities
 {

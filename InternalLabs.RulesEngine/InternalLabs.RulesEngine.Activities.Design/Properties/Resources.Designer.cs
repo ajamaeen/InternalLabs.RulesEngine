@@ -61,7 +61,7 @@ namespace InternalLabs.RulesEngine.Activities.Design.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UiPathTeam.RulesEngine.
+        ///   Looks up a localized string similar to InternalLabs.RulesEngine.
         /// </summary>
         public static string Category {
             get {

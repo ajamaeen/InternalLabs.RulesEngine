@@ -1,24 +1,16 @@
 ﻿namespace InternalLabs.RulesEngine.Activities.Design
 {
     using InternalLabs.RulesEngine.Activities.Design.Dialogs;
-    using InternalLabs.RulesEngine.Activities.Design.Properties;
     using LogicBuilder.Workflow.Activities.Rules;
     using LogicBuilder.Workflow.Activities.Rules.Design;
     using LogicBuilder.Workflow.ComponentModel.Serialization;
     using System;
     using System.Activities;
-    using System.Activities.Presentation;
     using System.Activities.Presentation.Model;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.IO;
-    using System.Linq;
-    using System.Text;
     using System.Windows;
-    using System.Windows.Forms;
-    //using System.Workflow.Activities.Rules;
-    //using System.Workflow.Activities.Rules.Design;
-    //using System.Workflow.ComponentModel.Serialization;
+    using System.Windows.Forms;    
     using System.Xml;
     using UiPath.Shared.Activities.Design.Controls;
     using UiPath.Shared.Activities.Design.Services;

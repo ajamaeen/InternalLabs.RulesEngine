@@ -1,0 +1,314 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1205,2010" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ira="clr-namespace:InternalLabs.RulesEngine.Activities;assembly=InternalLabs.RulesEngine.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:om="clr-namespace:OnlineBanking.Models;assembly=DataService.OnlineBanking.Models" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Private.CoreLib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="70">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>OnlineBanking.Models</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>LogicBuilder.Workflow.ComponentModel.Compiler</x:String>
+      <x:String>InternalLabs.RulesEngine.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPathTeam.RulesEngine.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Workflow.ComponentModel</AssemblyReference>
+      <AssemblyReference>DataService.OnlineBanking.Models</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>LogicBuilder.Workflow.ComponentModel.Serialization</AssemblyReference>
+      <AssemblyReference>InternalLabs.RulesEngine.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Loan Workflow" sap:VirtualizedContainerService.HintSize="554,1945" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="om:Loan" Name="loan" />
+      <Variable x:TypeArguments="x:Int64" Name="totalRecords" />
+      <Variable x:TypeArguments="scg:IList(om:Loan)" Name="loanRequests" />
+      <Variable x:TypeArguments="x:Int32" Name="pageIndex" />
+      <Variable x:TypeArguments="x:Int32" Name="pageSize" />
+      <Variable x:TypeArguments="sd:Stopwatch" Name="stopwatch" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">pageIndex</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">pageSize</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">100</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="sd:Stopwatch">
+                <CSharpReference x:TypeArguments="sd:Stopwatch" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">stopwatch</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="sd:Stopwatch">
+                <CSharpValue x:TypeArguments="sd:Stopwatch" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">null</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Loop Over All Loans" sap:VirtualizedContainerService.HintSize="512,1651" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1486" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uda:QueryEntityRecords x:TypeArguments="om:Loan" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,221" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_3" SortAscending="True" SortByField="Id" TimeoutInMs="30000">
+            <uda:QueryEntityRecords.FilterArguments>
+              <uda:FilterArgument FilterActivityType="om:Loan">
+                <uda:FilterArgument.Filter>
+                  <uda:GroupFilter Operator="or">
+                    <uda:GroupFilter.Filters>
+                      <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="IsProcessing" FieldType="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" Operator="=" ValueIndex="0" />
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="IsProcessing" FieldType="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" Operator="=" ValueIndex="1" />
+                      </scg:List>
+                    </uda:GroupFilter.Filters>
+                    <uda:GroupFilter.Groups>
+                      <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                    </uda:GroupFilter.Groups>
+                  </uda:GroupFilter>
+                </uda:FilterArgument.Filter>
+              </uda:FilterArgument>
+            </uda:QueryEntityRecords.FilterArguments>
+            <uda:QueryEntityRecords.FilterValues>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+                  <CSharpValue x:TypeArguments="s:Nullable(x:Boolean)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">false</CSharpValue>
+                </InArgument>
+                <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+                  <CSharpValue x:TypeArguments="s:Nullable(x:Boolean)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">null</CSharpValue>
+                </InArgument>
+              </scg:List>
+            </uda:QueryEntityRecords.FilterValues>
+            <uda:QueryEntityRecords.OutputRecords>
+              <OutArgument x:TypeArguments="scg:IList(om:Loan)">
+                <CSharpReference x:TypeArguments="scg:IList(om:Loan)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">loanRequests</CSharpReference>
+              </OutArgument>
+            </uda:QueryEntityRecords.OutputRecords>
+            <uda:QueryEntityRecords.Skip>
+              <InArgument x:TypeArguments="x:Int64">
+                <CSharpValue x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">pageIndex*pageSize</CSharpValue>
+              </InArgument>
+            </uda:QueryEntityRecords.Skip>
+            <uda:QueryEntityRecords.Top>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">pageSize</CSharpValue>
+              </InArgument>
+            </uda:QueryEntityRecords.Top>
+          </uda:QueryEntityRecords>
+          <ui:ForEach x:TypeArguments="om:Loan" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,993" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="om:Loan">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="om:Loan" Name="loan" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,870" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:Stopwatch">
+                        <CSharpReference x:TypeArguments="sd:Stopwatch" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">stopwatch</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:Stopwatch">
+                        <CSharpValue x:TypeArguments="sd:Stopwatch" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Stopwatch.StartNew()</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ira:RulesPolicy x:TypeArguments="om:Loan" ContinueOnError="{x:Null}" ValidationErrors="{x:Null}" DisplayName="Rules Policy" sap:VirtualizedContainerService.HintSize="334,203" sap2010:WorkflowViewState.IdRef="RulesPolicy`1_1" RuleSetName="Loan-1-0" RulesFilePath="Rules\Loan.rules">
+                    <ira:RulesPolicy.ResultObject>
+                      <OutArgument x:TypeArguments="om:Loan">
+                        <CSharpReference x:TypeArguments="om:Loan" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">loan</CSharpReference>
+                      </OutArgument>
+                    </ira:RulesPolicy.ResultObject>
+                    <ira:RulesPolicy.TargetObject>
+                      <InArgument x:TypeArguments="om:Loan">
+                        <CSharpValue x:TypeArguments="om:Loan" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">loan</CSharpValue>
+                      </InArgument>
+                    </ira:RulesPolicy.TargetObject>
+                  </ira:RulesPolicy>
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="varStopWatch.Stop();" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                    <ui:InvokeCode.Arguments>
+                      <InArgument x:TypeArguments="sd:Stopwatch" x:Key="varStopWatch">
+                        <CSharpValue x:TypeArguments="sd:Stopwatch" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">stopwatch</CSharpValue>
+                      </InArgument>
+                    </ui:InvokeCode.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeCode>
+                  <ui:AddLogFields DisplayName="Add Log Fields" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+                    <ui:AddLogFields.Fields>
+                      <InArgument x:TypeArguments="x:Int64" x:Key="RulesEngineTransacionTimeMilliseconds">
+                        <CSharpValue x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">stopwatch.ElapsedMilliseconds</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="s:Guid" x:Key="RulesEngineEntityId">
+                        <CSharpValue x:TypeArguments="s:Guid" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">loan.Id</CSharpValue>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="RulesEngineEntityIsApproved">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">loan.IsApproved.GetValueOrDefault()</CSharpValue>
+                      </InArgument>
+                    </ui:AddLogFields.Fields>
+                  </ui:AddLogFields>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">
+                        <CSharpReference x:TypeArguments="s:Nullable(x:Boolean)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">loan.IsProcessing</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+                        <CSharpValue x:TypeArguments="s:Nullable(x:Boolean)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">true</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uda:UpdateEntityRecord x:TypeArguments="om:Loan" OutputEntity="{x:Null}" ContinueOnError="False" DisplayName="Update Entity Record" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_1" TimeoutInMs="30000">
+                    <uda:UpdateEntityRecord.InputEntity>
+                      <InArgument x:TypeArguments="om:Loan">
+                        <CSharpValue x:TypeArguments="om:Loan" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">loan</CSharpValue>
+                      </InArgument>
+                    </uda:UpdateEntityRecord.InputEntity>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uda:UpdateEntityRecord>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">"Loan Id: " + loan.Id + " has been proceeded"</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+            <ui:ForEach.Values>
+              <InArgument x:TypeArguments="sc:IEnumerable">
+                <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">loanRequests</CSharpValue>
+              </InArgument>
+            </ui:ForEach.Values>
+          </ui:ForEach>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">pageIndex</CSharpReference>
+                    </OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">pageIndex + 1</CSharpValue>
+                    </InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">loanRequests.Count &gt; 0</CSharpValue>
+      </ui:InterruptibleDoWhile.Condition>
+    </ui:InterruptibleDoWhile>
+  </Sequence>
+</Activity>

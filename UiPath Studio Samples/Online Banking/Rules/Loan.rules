@@ -1,0 +1,1465 @@
+<RuleDefinitions xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<RuleDefinitions.RuleSets>
+		<RuleSet Description="{p3:Null}" Name="Loan-1-0" ChainingBehavior="Full" xmlns:p3="http://schemas.microsoft.com/winfx/2006/xaml">
+			<RuleSet.Rules>
+				<Rule Priority="1" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule 8">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="GreaterThan" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">1000000</ns1:Int32>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">The loan cannot exceed 1,000,000</ns1:String>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleHaltAction />
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="2" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule1">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">200</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.3</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Debt-to-Income too high compared to credit score</ns1:String>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="3" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule2">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">800</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">200</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.3</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">true</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.01</ns1:Decimal>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="Add">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodePropertyReferenceExpression PropertyName="Value">
+													<ns0:CodePropertyReferenceExpression.TargetObject>
+														<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodeThisReferenceExpression />
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodePropertyReferenceExpression.TargetObject>
+												</ns0:CodePropertyReferenceExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodePrimitiveExpression>
+													<ns0:CodePrimitiveExpression.Value>
+														<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">The loan is approved &amp; your yearly intrest rate is : </ns1:String>
+													</ns0:CodePrimitiveExpression.Value>
+												</ns0:CodePrimitiveExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="4" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule3">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">400</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.45</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.3</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Debt-to-Income too high compared to credit score</ns1:String>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="5" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule4">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">800</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">400</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.45</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.30</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">true</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.01</ns1:Decimal>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="Add">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodePropertyReferenceExpression PropertyName="Value">
+													<ns0:CodePropertyReferenceExpression.TargetObject>
+														<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodeThisReferenceExpression />
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodePropertyReferenceExpression.TargetObject>
+												</ns0:CodePropertyReferenceExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodePrimitiveExpression>
+													<ns0:CodePrimitiveExpression.Value>
+														<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">The loan is approved &amp; your yearly payment is </ns1:String>
+													</ns0:CodePrimitiveExpression.Value>
+												</ns0:CodePrimitiveExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="6" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule5">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">600</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.50</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.45</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Debt-to-Income too high compared to credit score</ns1:String>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="7" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule6">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">800</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">600</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.50</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.45</ns1:Decimal>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodeBinaryOperatorExpression Operator="Divide">
+															<ns0:CodeBinaryOperatorExpression.Right>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																					<ns0:CodePropertyReferenceExpression.TargetObject>
+																						<ns0:CodeThisReferenceExpression />
+																					</ns0:CodePropertyReferenceExpression.TargetObject>
+																				</ns0:CodePropertyReferenceExpression>
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Right>
+															<ns0:CodeBinaryOperatorExpression.Left>
+																<ns0:CodePropertyReferenceExpression PropertyName="Value">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodeBinaryOperatorExpression.Left>
+														</ns0:CodeBinaryOperatorExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">true</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.01</ns1:Decimal>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="Add">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodePropertyReferenceExpression PropertyName="Value">
+													<ns0:CodePropertyReferenceExpression.TargetObject>
+														<ns0:CodePropertyReferenceExpression PropertyName="YearlyInterestRate">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodeThisReferenceExpression />
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodePropertyReferenceExpression.TargetObject>
+												</ns0:CodePropertyReferenceExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodePrimitiveExpression>
+													<ns0:CodePrimitiveExpression.Value>
+														<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">The loan is approved &amp; your yearly payment is </ns1:String>
+													</ns0:CodePrimitiveExpression.Value>
+												</ns0:CodePrimitiveExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+				<Rule Priority="8" ReevaluationBehavior="Never" Description="{p3:Null}" Active="True" Name="Rule7">
+					<Rule.Condition>
+						<RuleExpressionCondition Name="{p3:Null}">
+							<RuleExpressionCondition.Expression>
+								<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeBinaryOperatorExpression.Right>
+										<ns0:CodeBinaryOperatorExpression Operator="BooleanAnd">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodeBinaryOperatorExpression Operator="LessThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">800</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePrimitiveExpression>
+															<ns0:CodePrimitiveExpression.Value>
+																<ns1:Int32 xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">600</ns1:Int32>
+															</ns0:CodePrimitiveExpression.Value>
+														</ns0:CodePrimitiveExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="CreditScore">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Right>
+									<ns0:CodeBinaryOperatorExpression.Left>
+										<ns0:CodeBinaryOperatorExpression Operator="GreaterThan">
+											<ns0:CodeBinaryOperatorExpression.Right>
+												<ns0:CodePrimitiveExpression>
+													<ns0:CodePrimitiveExpression.Value>
+														<ns1:Decimal xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">0.50</ns1:Decimal>
+													</ns0:CodePrimitiveExpression.Value>
+												</ns0:CodePrimitiveExpression>
+											</ns0:CodeBinaryOperatorExpression.Right>
+											<ns0:CodeBinaryOperatorExpression.Left>
+												<ns0:CodeBinaryOperatorExpression Operator="Divide">
+													<ns0:CodeBinaryOperatorExpression.Right>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="YearlyIncome">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodePropertyReferenceExpression PropertyName="Borrower">
+																			<ns0:CodePropertyReferenceExpression.TargetObject>
+																				<ns0:CodeThisReferenceExpression />
+																			</ns0:CodePropertyReferenceExpression.TargetObject>
+																		</ns0:CodePropertyReferenceExpression>
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Right>
+													<ns0:CodeBinaryOperatorExpression.Left>
+														<ns0:CodePropertyReferenceExpression PropertyName="Value">
+															<ns0:CodePropertyReferenceExpression.TargetObject>
+																<ns0:CodePropertyReferenceExpression PropertyName="Amount">
+																	<ns0:CodePropertyReferenceExpression.TargetObject>
+																		<ns0:CodeThisReferenceExpression />
+																	</ns0:CodePropertyReferenceExpression.TargetObject>
+																</ns0:CodePropertyReferenceExpression>
+															</ns0:CodePropertyReferenceExpression.TargetObject>
+														</ns0:CodePropertyReferenceExpression>
+													</ns0:CodeBinaryOperatorExpression.Left>
+												</ns0:CodeBinaryOperatorExpression>
+											</ns0:CodeBinaryOperatorExpression.Left>
+										</ns0:CodeBinaryOperatorExpression>
+									</ns0:CodeBinaryOperatorExpression.Left>
+								</ns0:CodeBinaryOperatorExpression>
+							</RuleExpressionCondition.Expression>
+						</RuleExpressionCondition>
+					</Rule.Condition>
+					<Rule.ThenActions>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="IsApproved">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:Boolean xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">false</ns1:Boolean>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+						<RuleStatementAction>
+							<RuleStatementAction.CodeDomStatement>
+								<ns0:CodeAssignStatement LinePragma="{p3:Null}" xmlns:ns0="clr-namespace:System.CodeDom;Assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+									<ns0:CodeAssignStatement.Left>
+										<ns0:CodePropertyReferenceExpression PropertyName="Note">
+											<ns0:CodePropertyReferenceExpression.TargetObject>
+												<ns0:CodeThisReferenceExpression />
+											</ns0:CodePropertyReferenceExpression.TargetObject>
+										</ns0:CodePropertyReferenceExpression>
+									</ns0:CodeAssignStatement.Left>
+									<ns0:CodeAssignStatement.Right>
+										<ns0:CodePrimitiveExpression>
+											<ns0:CodePrimitiveExpression.Value>
+												<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Debt-to-Income too high compared to credit score</ns1:String>
+											</ns0:CodePrimitiveExpression.Value>
+										</ns0:CodePrimitiveExpression>
+									</ns0:CodeAssignStatement.Right>
+								</ns0:CodeAssignStatement>
+							</RuleStatementAction.CodeDomStatement>
+						</RuleStatementAction>
+					</Rule.ThenActions>
+				</Rule>
+			</RuleSet.Rules>
+		</RuleSet>
+	</RuleDefinitions.RuleSets>
+</RuleDefinitions>

@@ -1,7 +1,7 @@
 using System.Activities.Presentation.Metadata;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using InternalLabs.RulesEngine.Activities.Design;
+using InternalLabs.RulesEngine.Activities.Design.Properties;
 
 namespace InternalLabs.RulesEngine.Activities.Design
 {
