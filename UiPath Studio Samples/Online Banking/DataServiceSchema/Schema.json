@@ -1,0 +1,279 @@
+{
+  "entities": [
+    {
+      "name": "Borrower",
+      "displayName": "Borrower",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "Borrower information",
+      "fields": [
+        {
+          "name": "Name",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Name",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "YearlyIncome",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "DECIMAL",
+            "lengthLimit": 1000,
+            "maxValue": 1000000000000,
+            "minValue": -1000000000000,
+            "decimalPrecision": 2
+          },
+          "isRequired": true,
+          "displayName": "Yearly Income",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "CreditScore",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "DECIMAL",
+            "lengthLimit": 1000,
+            "maxValue": 1000000000000,
+            "minValue": -1000000000000,
+            "decimalPrecision": 2
+          },
+          "isRequired": true,
+          "displayName": "Credit Score",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        }
+      ],
+      "isRbacEnabled": false
+    },
+    {
+      "name": "Loan",
+      "displayName": "Loan",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "Loan information\n",
+      "fields": [
+        {
+          "name": "Amount",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "DECIMAL",
+            "lengthLimit": 1000,
+            "maxValue": 1000000000000,
+            "minValue": -1000000000000,
+            "decimalPrecision": 2
+          },
+          "isRequired": true,
+          "displayName": "Amount",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "Duration",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "DECIMAL",
+            "lengthLimit": 1000,
+            "maxValue": 1000000000000,
+            "minValue": -1000000000000,
+            "decimalPrecision": 2
+          },
+          "isRequired": true,
+          "displayName": "Duration",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "YearlyInterestRate",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "DECIMAL",
+            "lengthLimit": 1000,
+            "maxValue": 1000000000000,
+            "minValue": -1000000000000,
+            "decimalPrecision": 2
+          },
+          "isRequired": false,
+          "displayName": "Yearly Interest Rate",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "Note",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Note",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "IsApproved",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "BIT",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "IsApproved",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "IsProcessing",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "BIT",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Is Processing",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        },
+        {
+          "name": "Borrower",
+          "isPrimaryKey": false,
+          "isForeignKey": true,
+          "isUnique": false,
+          "referenceEntity": {
+            "name": "Borrower",
+            "displayName": "Borrower",
+            "entityTypeId": 0,
+            "entityType": "Entity",
+            "isRbacEnabled": false
+          },
+          "referenceField": {
+            "definition": {
+              "name": "Name",
+              "isPrimaryKey": false,
+              "isForeignKey": false,
+              "isUnique": false,
+              "referenceType": "ManyToOne",
+              "sqlType": {
+                "name": "NVARCHAR",
+                "lengthLimit": 200
+              },
+              "isRequired": false,
+              "displayName": "Name",
+              "isSystemField": false,
+              "fieldDisplayType": "Basic",
+              "isAttachment": false,
+              "isRbacEnabled": false
+            }
+          },
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "UNIQUEIDENTIFIER",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Borrower",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Relationship",
+          "isAttachment": false,
+          "isRbacEnabled": false
+        }
+      ],
+      "isRbacEnabled": false
+    }
+  ],
+  "choicesets": [
+    {
+      "name": "Teams",
+      "displayName": "Teams",
+      "description": "",
+      "data": [
+        {
+          "DisplayName": "Engineering",
+          "Name": "Engineering",
+          "NumberId": 0
+        },
+        {
+          "DisplayName": "Operations",
+          "Name": "Operations",
+          "NumberId": 1
+        },
+        {
+          "DisplayName": "Quality",
+          "Name": "Quality",
+          "NumberId": 2
+        },
+        {
+          "DisplayName": "Product",
+          "Name": "Product",
+          "NumberId": 3
+        },
+        {
+          "DisplayName": "One Solution",
+          "Name": "OneSolution",
+          "NumberId": 4
+        }
+      ]
+    }
+  ]
+}
